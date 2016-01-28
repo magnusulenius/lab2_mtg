@@ -3,3 +3,4 @@
 *.pbxuser
 .DS_Store
 build/
+lab2/lab2.xcodeproj/xcuserdata
