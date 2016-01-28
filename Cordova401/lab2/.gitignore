@@ -3,4 +3,8 @@
 *.pbxuser
 .DS_Store
 build/
+*.pbxuser
+*.perspective
+*.perspectivev3
 lab2/lab2.xcodeproj/xcuserdata/*
+xcuserdata
