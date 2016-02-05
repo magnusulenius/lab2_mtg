@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "986AF80EDD8F507F955288D07D39B731A818B267",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "01B09C7DB170E6215B892FBE349408038EC70DEC" : 0,
+    "986AF80EDD8F507F955288D07D39B731A818B267" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CF6B8E14-F78F-4A8C-AA8B-108594837A7A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "01B09C7DB170E6215B892FBE349408038EC70DEC" : "",
+    "986AF80EDD8F507F955288D07D39B731A818B267" : "lab2_mtg\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "lab2_mtg",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "lab2_mtg\/lab2_mtg.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aguelo\/hypernode.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01B09C7DB170E6215B892FBE349408038EC70DEC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/magnusulenius\/lab2_mtg",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "986AF80EDD8F507F955288D07D39B731A818B267"
+    }
+  ]
+}
