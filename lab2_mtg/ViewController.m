@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <Spotify/Spotify.h>
+#import <Spotify/SPTAudioStreamingController.h>
 
 @interface ViewController ()
 
@@ -22,6 +24,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)logoutWithSpotify:(id)sender {
+    // Code to be run when button clicked
 }
 
 @end
