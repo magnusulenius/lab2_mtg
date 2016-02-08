@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Spotify/Spotify.h>
+#import <Spotify/SPTAudioStreamingController.h>
 
 @interface ViewController : UIViewController
-
 
 @end
 
