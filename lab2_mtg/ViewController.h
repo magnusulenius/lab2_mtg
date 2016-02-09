@@ -12,5 +12,7 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) SPTAudioStreamingController *logout;
+
 @end
 
