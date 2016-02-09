@@ -12,6 +12,7 @@
 @interface AppDelegate ()
 @property (nonatomic, strong) SPTSession *session;
 @property (nonatomic, strong) SPTAudioStreamingController *player;
+@property (nonatomic, strong) SPTAudioStreamingController *logout;
 @end
 
 @implementation AppDelegate

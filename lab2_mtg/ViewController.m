@@ -28,6 +28,8 @@
 
 - (IBAction)logoutWithSpotify:(id)sender {
     // Code to be run when button clicked
+    [self logout];
 }
 
 @end
+
