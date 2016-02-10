@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		776E27651C6B7B6200BFE4E1 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E27641C6B7B6200BFE4E1 /* SwiftyJSON.swift */; };
 		F7987B131C6A014D004F0407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7987B121C6A014D004F0407 /* AppDelegate.swift */; };
 		F7987B151C6A014D004F0407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7987B141C6A014D004F0407 /* ViewController.swift */; };
 		F7987B181C6A014D004F0407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7987B161C6A014D004F0407 /* Main.storyboard */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		776E27641C6B7B6200BFE4E1 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		F7987B0F1C6A014D004F0407 /* Q.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Q.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7987B121C6A014D004F0407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7987B141C6A014D004F0407 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 				F7987B261C6A014E004F0407 /* QTests */,
 				F7987B311C6A014E004F0407 /* QUITests */,
 				F7987B101C6A014D004F0407 /* Products */,
-				776E27641C6B7B6200BFE4E1 /* SwiftyJSON.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,7 +278,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				776E27651C6B7B6200BFE4E1 /* SwiftyJSON.swift in Sources */,
 				F7987B151C6A014D004F0407 /* ViewController.swift in Sources */,
 				F7987B131C6A014D004F0407 /* AppDelegate.swift in Sources */,
 			);
