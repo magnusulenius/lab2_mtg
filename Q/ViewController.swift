@@ -66,6 +66,8 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     func updateAfterFirstLogin () {
         loginSpotify.hidden = true
         
+        self.performSegueWithIdentifier("afterLoginSegue", sender: self)
+        
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
