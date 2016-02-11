@@ -16,20 +16,22 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     
-
+    
+    @IBOutlet weak var loginSpotify: UIButton!
+    
     @IBOutlet weak var artworkImageView: UIImageView!
     
-    @IBOutlet weak var songLength: UILabel!
-    @IBOutlet weak var songArtist: UILabel!
     @IBOutlet weak var songName: UILabel!
-    @IBOutlet weak var loginSpotify: UIButton!
+    
+    @IBOutlet weak var songArtist: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name:"spotifyLoginSuccessful", object: nil)
         
-        loginSpotify.hidden = true
+        //loginSpotify.hidden = true
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -59,24 +61,43 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
             }
             
         }else{
-            loginSpotify.hidden = false
+            //loginSpotify.hidden = false
         }
     }
     
+    func showSecondViewController() {
+        self.performSegueWithIdentifier("idFirstSegue", sender: self)
+    }
+    
     func updateAfterFirstLogin () {
-        loginSpotify.hidden = true
-        
-        self.performSegueWithIdentifier("afterLoginSegue", sender: self)
+        //loginSpotify.hidden = true
+        self.showSecondViewController()
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
             let sessionDataObj = sessionObj as! NSData
             let firstTimeSession = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
+            
             self.session = firstTimeSession
             playUsingSession(firstTimeSession)
+            print(self.session)
+        }
+        
+    }
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "afterLoginSegue" == segue.identifier {
+            
         }
     }
+    
+    @IBAction func afterLoginSegue(sender: AnyObject) {
+        if session.isValid() {
+            self.performSegueWithIdentifier("afterLoginSegue", sender: self)
+        }
+    }
+    */
     
     func playUsingSession(sessionObj:SPTSession!){
         if player == nil {
@@ -105,9 +126,6 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
             
         })
     }
-    
-    
-    
 
     @IBAction func loginSpotify(sender: AnyObject) {
         let spotifyAuth = SPTAuth.defaultInstance()
@@ -133,9 +151,9 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
             
             print(trackMetadata["SPTAudioStreamingMetadataAlbumURI"])
             
-            songArtist.text = trackMetadata["SPTAudioStreamingMetadataArtistName"] as? String
+            songArtist?.text = trackMetadata["SPTAudioStreamingMetadataArtistName"] as? String!
             
-            songName.text = trackMetadata["SPTAudioStreamingMetadataTrackName"] as? String
+            songName?.text = trackMetadata["SPTAudioStreamingMetadataTrackName"] as? String!
             
             var uri = trackMetadata[SPTAudioStreamingMetadataTrackURI] as! String
             var uri2 = NSURL(string: uri)
@@ -155,11 +173,11 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
                         dispatch_async(dispatch_get_main_queue()) {
                             image = UIImage(data:imageData!)!
                             
-                            self.artworkImageView.image = image
+                            self.artworkImageView?.image = image
                         }
                     } else {
                         // Set blank image if cover not found
-                        self.artworkImageView.image = UIImage(named: "blankart")
+                        self.artworkImageView?.image = UIImage(named: "blankart")
                     }
                 }
             })
