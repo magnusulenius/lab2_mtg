@@ -16,11 +16,12 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     
-
     @IBOutlet weak var artworkImageView: UIImageView!
-    @IBOutlet weak var songLength: UILabel!
-    @IBOutlet weak var songArtist: UILabel!
+    
     @IBOutlet weak var songName: UILabel!
+    
+    @IBOutlet weak var songArtist: UILabel!
+    
     @IBOutlet weak var loginSpotify: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,9 +130,9 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
             
             print(trackMetadata["SPTAudioStreamingMetadataAlbumURI"])
             
-            songArtist.text = trackMetadata["SPTAudioStreamingMetadataArtistName"] as? String
+            songArtist?.text = trackMetadata["SPTAudioStreamingMetadataArtistName"] as? String
             
-            songName.text = trackMetadata["SPTAudioStreamingMetadataTrackName"] as? String
+            songName?.text = trackMetadata["SPTAudioStreamingMetadataTrackName"] as? String
             
             var uri = trackMetadata[SPTAudioStreamingMetadataTrackURI] as! String
             var uri2 = NSURL(string: uri)
@@ -151,11 +152,11 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
                         dispatch_async(dispatch_get_main_queue()) {
                             image = UIImage(data:imageData!)!
                             
-                            self.artworkImageView.image = image
+                            self.artworkImageView?.image = image
                         }
                     } else {
                         // Set blank image if cover not found
-                        self.artworkImageView.image = UIImage(named: "blankart")
+                        self.artworkImageView?.image = UIImage(named: "blankart")
                     }
                 }
             })
