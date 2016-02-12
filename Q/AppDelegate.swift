@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  new
+//  Q
 //
-//  Created by Johannes Swenson on 09/02/16.
-//  Copyright © 2016 Johannes Swenson. All rights reserved.
+//  Created by JAM on 09/02/16.
+//  Copyright © 2016 JAM. All rights reserved.
 //
 
 import UIKit
