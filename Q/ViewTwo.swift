@@ -110,7 +110,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
                 return
             }
             
-            SPTRequest.requestItemAtURI(NSURL(string: "spotify:track:6LUGAFpbYVek4rRY0G9dV0"), withSession: sessionObj, callback: { (error : NSError!, trackObj:AnyObject!) -> Void in
+            SPTRequest.requestItemAtURI(NSURL(string: "spotify:track:6anNTTVQA5UuN4Wj7IcoWh"), withSession: sessionObj, callback: { (error : NSError!, trackObj:AnyObject!) -> Void in
                 if error != nil {
                     print("Track lookup got error")
                     return

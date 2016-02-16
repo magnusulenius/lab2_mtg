@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Q-logo_vector_alphalayer" translatesAutoresizingMaskIntoConstraints="NO" id="ysf-w7-moU">
+                                <rect key="frame" x="215" y="215" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ysf-w7-moU" secondAttribute="height" multiplier="1:1" id="4WS-YU-xJQ"/>
+                                    <constraint firstAttribute="width" constant="170" id="5n7-TH-uSf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="170" id="yCD-OB-Uf3"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5n7-TH-uSf"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.15032508389261745" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ysf-w7-moU" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="TKb-l4-F8P"/>
+                            <constraint firstItem="ysf-w7-moU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dqx-zs-oKy"/>
+                            <constraint firstItem="ysf-w7-moU" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="195" id="mFm-G2-ark"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +45,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Q-logo_vector_alphalayer" width="979" height="947"/>
+    </resources>
 </document>
