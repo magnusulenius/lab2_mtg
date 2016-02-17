@@ -37,8 +37,6 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name:"spotifyLoginSuccessful", object: nil)
         
-        //loginSpotify.hidden = true
-        
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") { // Session availible
@@ -71,7 +69,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
             }
             
         }else{
-            //loginSpotify.hidden = false
+
         }
         
 
@@ -81,7 +79,6 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     // --------------------------------------------------------
     
     func updateAfterFirstLogin () {
-        //loginSpotify.hidden = true
         
         let userDefaults = NSUserDefaults.standardUserDefaults()
         

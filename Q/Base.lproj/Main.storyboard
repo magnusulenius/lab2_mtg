@@ -39,7 +39,7 @@
                                     <color key="titleColor" red="0.9152485728263855" green="0.59948885440826416" blue="0.28543636202812195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="S2o-XL-TUZ" kind="show" id="DCL-vm-CTO"/>
+                                    <segue destination="S2o-XL-TUZ" kind="show" identifier="afterLoginSegue" id="DCL-vm-CTO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,6 +55,7 @@
                     <connections>
                         <outlet property="loginSpotify" destination="2Sv-h0-Zex" id="8kE-ao-boG"/>
                         <outlet property="nextBtn" destination="huU-zR-mRW" id="8S1-Ab-scO"/>
+                        <segue destination="S2o-XL-TUZ" kind="show" id="a68-tf-Cnn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -137,4 +138,7 @@
     <resources>
         <image name="log_in-mobile" width="488" height="88"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DCL-vm-CTO"/>
+    </inferredMetricsTieBreakers>
 </document>
