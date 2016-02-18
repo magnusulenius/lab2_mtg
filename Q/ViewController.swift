@@ -32,7 +32,6 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
 // ----------- Spotify login --------------------------------
