@@ -83,12 +83,15 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
     @IBAction func logoutSpotify(sender: AnyObject) {
 
-        print("logout")
         self.player.logout({ (error : NSError!) -> Void in
             if error != nil {
                 print("Logout error")
                 return
             }
+            SPTAuth.defaultInstance().session = nil
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults.synchronize()
+            print("logout complete")
         })
     }
     
