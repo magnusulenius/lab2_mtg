@@ -75,8 +75,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixm-gQ-tXP">
-                                <rect key="frame" x="276" y="538" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
+                                <rect key="frame" x="284" y="538" width="32" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.9152485728263855" green="0.59948885440826416" blue="0.28543636202812195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutSpotify:" destination="S2o-XL-TUZ" eventType="touchUpInside" id="QGq-G5-l2M"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="sm8-9Y-yVM"/>
