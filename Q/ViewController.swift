@@ -37,19 +37,7 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        print("validity: ", validVar)
-        
-        
-
-    }
-    
-// ----------- show buttons --------------
-// ----------------------------------------
-    
 
     
 // ----------- Spotify login ---------------------
