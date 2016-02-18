@@ -34,7 +34,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="tr0-Xb-0FT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="0.9152485728263855" green="0.59948885440826416" blue="0.28543636202812195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -107,8 +107,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixm-gQ-tXP">
-                                <rect key="frame" x="276" y="538" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
+                                <rect key="frame" x="284" y="504" width="32" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="0.9152485728263855" green="0.59948885440826416" blue="0.28543636202812195" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutSpotify:" destination="S2o-XL-TUZ" eventType="touchUpInside" id="QGq-G5-l2M"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="vSG-zy-Oan"/>
@@ -118,7 +120,7 @@
                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CJg-gw-1uM" firstAttribute="top" secondItem="EOq-jr-JMJ" secondAttribute="bottom" constant="148" id="0nu-ZA-2LS"/>
-                            <constraint firstItem="CJg-gw-1uM" firstAttribute="top" secondItem="ixm-gQ-tXP" secondAttribute="bottom" constant="32" id="E6L-he-4QV"/>
+                            <constraint firstItem="CJg-gw-1uM" firstAttribute="top" secondItem="ixm-gQ-tXP" secondAttribute="bottom" constant="66" id="E6L-he-4QV"/>
                             <constraint firstItem="EOq-jr-JMJ" firstAttribute="centerX" secondItem="s2K-le-ara" secondAttribute="centerX" id="GGv-sO-XWh"/>
                             <constraint firstItem="9G0-1g-2de" firstAttribute="centerX" secondItem="EOq-jr-JMJ" secondAttribute="centerX" id="Sgc-Fq-GXw"/>
                             <constraint firstItem="EOq-jr-JMJ" firstAttribute="top" secondItem="9G0-1g-2de" secondAttribute="bottom" constant="8" symbolic="YES" id="Ttz-RV-HBl"/>

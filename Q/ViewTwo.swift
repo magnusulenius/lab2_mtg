@@ -75,7 +75,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     }
     
     // ------ Logout button ------------
-    // ------ (Doesn't work) -----------
+    // ------ ------------- -----------
 
     @IBAction func logoutSpotify(sender: AnyObject) {
 
