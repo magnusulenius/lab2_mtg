@@ -13,9 +13,12 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     // Outlet vars
     @IBOutlet weak var artworkImageView: UIImageView!
     
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var songName: UILabel!
     
     @IBOutlet weak var songArtist: UILabel!
+    
+    @IBOutlet weak var userName: UILabel!
     
     @IBOutlet weak var logoutBtn: UIButton!
     
@@ -66,6 +69,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
                 print(songArtist?.text)
                 print(songNameLabel)
                 print(songName?.text)
+                getUserInformation()
             }
             
         }else{
@@ -101,6 +105,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
             let firstTimeSession = NSKeyedUnarchiver.unarchiveObjectWithData(sessionDataObj) as! SPTSession
             self.session = firstTimeSession
             playUsingSession(firstTimeSession)
+            getUserInformation()
         }
     }
     
@@ -186,6 +191,62 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
             print("Nothing to play")
         }
     }
+    
+    // --- Get user information -------------------------------
+    // --------------------------------------------------------
+    
+    func getUserInformation () {
+        SPTRequest.userInformationForUserInSession(session, callback:  { (error : NSError!, userObj:AnyObject?) -> Void in
+          
+            if error != nil {
+                print("Fetching User information got error")
+            }
+            
+            let user = userObj
+            let name = user?.displayName
+            let spotifyName = user?.canonicalUserName
+            
+            // Console prints
+            print(user)
+            print(name)
+            print(spotifyName)
+            
+            // Check for name
+            if (name != "") {
+                
+                // Assign name to label
+                self.userName.text = name
+                
+                let profile = user?.largestImage
+                let profileURL = profile!.imageURL
+                
+                print(profile)
+                print(profileURL)
+                
+                // Assign profile picture to imageview
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                    
+                    var profileImage = UIImage()
+                    let profileImageData = NSData(contentsOfURL: profileURL)
+                    
+                    if (profileImageData != nil) {
+                        dispatch_async(dispatch_get_main_queue()) {
+                            profileImage = UIImage(data:profileImageData!)!
+                            self.profileImageView?.image = profileImage
+                        }
+                    }
+                    else {
+                        self.profileImageView?.image = UIImage(named: "blankart")
+                    }
+                }
+                
+            }else {
+                // Assign username to label
+                self.userName.text = spotifyName
+            }
+            
+        })
 
+    }
 
 }
