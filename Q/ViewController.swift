@@ -11,22 +11,23 @@ import UIKit
 
 class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     
+    // Client & Callback vars
     let kClientID = "623552e65ea74f4192e6dbe15b3014d5"
     let kCallbackURL = "q-login://callback"
     
+    // Session & Player vars
     var session:SPTSession!
     var player:SPTAudioStreamingController?
     
-    
+    // Outlet vars
     @IBOutlet weak var loginSpotify: UIButton!
-    
     @IBOutlet weak var nextBtn: UIButton!
     
+    // Placeholders to be sent to ViewTwo
     var songNameVar = String()
-    
     var songArtistVar = String()
     
-// ----------------------------------------------------------
+// ----------- ViewDidLoad() --------------------------------
 // ----------------------------------------------------------
     
     override func viewDidLoad() {
@@ -34,7 +35,7 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
         
     }
     
-// ----------------------------------------------------------
+// ----------- Spotify login --------------------------------
 // ----------------------------------------------------------
     
     @IBAction func loginSpotify(sender: AnyObject) {
@@ -48,7 +49,7 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
         UIApplication.sharedApplication().openURL(spotifyLoginUrl)
     }
     
-// ----------------------------------------------------------
+// ------------ Prepare for segue ---------------------------
 // ----------------------------------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
