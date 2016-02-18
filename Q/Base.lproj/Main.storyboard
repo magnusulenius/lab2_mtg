@@ -106,16 +106,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixm-gQ-tXP">
+                                <rect key="frame" x="276" y="538" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutSpotify:" destination="S2o-XL-TUZ" eventType="touchUpInside" id="QGq-G5-l2M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CJg-gw-1uM" firstAttribute="top" secondItem="EOq-jr-JMJ" secondAttribute="bottom" constant="148" id="0nu-ZA-2LS"/>
+                            <constraint firstItem="CJg-gw-1uM" firstAttribute="top" secondItem="ixm-gQ-tXP" secondAttribute="bottom" constant="32" id="E6L-he-4QV"/>
                             <constraint firstItem="EOq-jr-JMJ" firstAttribute="centerX" secondItem="s2K-le-ara" secondAttribute="centerX" id="GGv-sO-XWh"/>
                             <constraint firstItem="9G0-1g-2de" firstAttribute="centerX" secondItem="EOq-jr-JMJ" secondAttribute="centerX" id="Sgc-Fq-GXw"/>
                             <constraint firstItem="EOq-jr-JMJ" firstAttribute="top" secondItem="9G0-1g-2de" secondAttribute="bottom" constant="8" symbolic="YES" id="Ttz-RV-HBl"/>
                             <constraint firstItem="9G0-1g-2de" firstAttribute="top" secondItem="ZQk-4l-UzB" secondAttribute="bottom" constant="19" id="YE6-me-UvN"/>
                             <constraint firstItem="9G0-1g-2de" firstAttribute="centerX" secondItem="ZQk-4l-UzB" secondAttribute="centerX" id="bPa-yd-qN0"/>
                             <constraint firstItem="EOq-jr-JMJ" firstAttribute="leading" secondItem="s2K-le-ara" secondAttribute="leadingMargin" constant="89" id="fA6-42-gnq"/>
+                            <constraint firstItem="ixm-gQ-tXP" firstAttribute="centerX" secondItem="EOq-jr-JMJ" secondAttribute="centerX" id="xeB-IY-v7R"/>
                             <constraint firstItem="ZQk-4l-UzB" firstAttribute="top" secondItem="DA6-EC-He5" secondAttribute="bottom" constant="63" id="y5s-2w-9X8"/>
                         </constraints>
                         <variation key="default">
@@ -126,6 +135,7 @@
                     </view>
                     <connections>
                         <outlet property="artworkImageView" destination="ZQk-4l-UzB" id="k2o-dh-FUW"/>
+                        <outlet property="logoutBtn" destination="ixm-gQ-tXP" id="qY9-oC-p8J"/>
                         <outlet property="songArtist" destination="EOq-jr-JMJ" id="PyA-hX-AgK"/>
                         <outlet property="songName" destination="9G0-1g-2de" id="W2m-zh-lsx"/>
                     </connections>
@@ -139,6 +149,6 @@
         <image name="log_in-mobile" width="488" height="88"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DCL-vm-CTO"/>
+        <segue reference="a68-tf-Cnn"/>
     </inferredMetricsTieBreakers>
 </document>

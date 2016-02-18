@@ -6,7 +6,6 @@
 //  Copyright © 2016 JAM. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
@@ -17,6 +16,8 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     @IBOutlet weak var songName: UILabel!
     
     @IBOutlet weak var songArtist: UILabel!
+    
+    @IBOutlet weak var logoutBtn: UIButton!
     
     // Placeholder vars to be sent between controllers
     var songNameLabel = String()
@@ -56,7 +57,6 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
                     }else {
                         print("error refreshing session")
                     }
-                    
                 })
             }else{
                 print("session valid")
@@ -72,11 +72,25 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
         }
         
-
     }
     
-    // --------------------------------------------------------
-    // --------------------------------------------------------
+    // --- Logout button --------
+    // --------------------------
+
+    @IBAction func logoutSpotify(sender: AnyObject) {
+
+        print("logout")
+        self.player.logout({ (error : NSError!) -> Void in
+            if error != nil {
+                print("Logout error")
+                return
+            }
+        })
+    }
+    
+    
+    // --- Update session -------
+    // --------------------------
     
     func updateAfterFirstLogin () {
         
@@ -97,7 +111,6 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
             
-            // Dunno why dis doesn't work...
             player?.playbackDelegate = self
         }
         
