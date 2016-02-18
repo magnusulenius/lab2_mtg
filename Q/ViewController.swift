@@ -41,7 +41,7 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
         let spotifyAuth = SPTAuth.defaultInstance()
         spotifyAuth.clientID = kClientID
         spotifyAuth.redirectURL = NSURL(string: kCallbackURL)
-        spotifyAuth.requestedScopes = [SPTAuthStreamingScope]
+        spotifyAuth.requestedScopes = [SPTAuthStreamingScope, SPTAuthUserReadPrivateScope]
         
         let spotifyLoginUrl : NSURL = spotifyAuth.loginURL
         
