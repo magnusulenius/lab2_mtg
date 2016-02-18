@@ -111,6 +111,7 @@
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="logoutSpotify:" destination="S2o-XL-TUZ" eventType="touchUpInside" id="QGq-G5-l2M"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="vSG-zy-Oan"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -149,6 +150,6 @@
         <image name="log_in-mobile" width="488" height="88"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a68-tf-Cnn"/>
+        <segue reference="DCL-vm-CTO"/>
     </inferredMetricsTieBreakers>
 </document>
