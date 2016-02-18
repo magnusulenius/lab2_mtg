@@ -33,9 +33,9 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     // Session & Player vars
     var session:SPTSession!
     var player:SPTAudioStreamingController!
-    
-// ----------------------------------------------------------
-// ----------------------------------------------------------
+
+    // ----------- ViewDidLoad() ------------
+    // --------------------------------------
     
     override func viewDidLoad() {
         
@@ -78,8 +78,8 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
         
     }
     
-    // --- Logout button --------
-    // --------------------------
+    // ------ Logout button ------------
+    // ------ (Doesn't work) -----------
 
     @IBAction func logoutSpotify(sender: AnyObject) {
 
@@ -109,8 +109,9 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
         }
     }
     
-    // --------------------------------------------------------
-    // --------------------------------------------------------
+
+    // --- Initialize player -------
+    // -----------------------------
     
     func playUsingSession(sessionObj:SPTSession!){
         if player == nil {
@@ -140,9 +141,9 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
             
         })
     }
-    
-    // --------------------------------------------------------
-    // --------------------------------------------------------
+
+    // --- Get metadata from track -------
+    // -----------------------------------
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeToTrack trackMetadata: [NSObject : AnyObject]!) {
         if player!.currentTrackURI != nil {
