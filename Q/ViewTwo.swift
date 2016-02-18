@@ -14,6 +14,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     @IBOutlet weak var artworkImageView: UIImageView!
     
     @IBOutlet weak var profileImageView: UIImageView!
+    
     @IBOutlet weak var songName: UILabel!
     
     @IBOutlet weak var songArtist: UILabel!
@@ -33,11 +34,15 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
     // Session & Player vars
     var session:SPTSession!
     var player:SPTAudioStreamingController!
+    
+    var trackURI = String()
 
     // ----------- ViewDidLoad() ------------
     // --------------------------------------
     
     override func viewDidLoad() {
+        
+        print(trackURI)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name:"spotifyLoginSuccessful", object: nil)
         
@@ -83,7 +88,7 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
     @IBAction func logoutSpotify(sender: AnyObject) {
 
-        self.player.logout({ (error : NSError!) -> Void in
+        self.player?.logout({ (error : NSError!) -> Void in
             if error != nil {
                 print("Logout error")
                 return
@@ -129,7 +134,8 @@ class ViewTwo: UIViewController, SPTAudioStreamingPlaybackDelegate {
                 return
             }
             
-            SPTRequest.requestItemAtURI(NSURL(string: "spotify:track:6anNTTVQA5UuN4Wj7IcoWh"), withSession: sessionObj, callback: { (error : NSError!, trackObj:AnyObject!) -> Void in
+            
+            SPTRequest.requestItemAtURI(NSURL(string: self.trackURI), withSession: sessionObj, callback: { (error : NSError!, trackObj:AnyObject!) -> Void in
                 if error != nil {
                     print("Track lookup got error")
                     return

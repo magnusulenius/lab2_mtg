@@ -27,15 +27,33 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
     var songNameVar = String()
     var songArtistVar = String()
     
-// ----------- ViewDidLoad() --------------------------------
-// ----------------------------------------------------------
+    var validVar: Bool = false
+    
+    @IBOutlet weak var trackURI: UITextField!
+    
+// ----------- ViewDidLoad() --------------
+// ----------------------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
-// ----------- Spotify login --------------------------------
-// ----------------------------------------------------------
+    override func viewDidAppear(animated: Bool) {
+        print("validity: ", validVar)
+        
+        
+
+    }
+    
+// ----------- show buttons --------------
+// ----------------------------------------
+    
+
+    
+// ----------- Spotify login ---------------------
+// -----------------------------------------------
     
     @IBAction func loginSpotify(sender: AnyObject) {
         let spotifyAuth = SPTAuth.defaultInstance()
@@ -46,20 +64,22 @@ class ViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
         let spotifyLoginUrl : NSURL = spotifyAuth.loginURL
         
         UIApplication.sharedApplication().openURL(spotifyLoginUrl)
+        
     }
     
-// ------------ Prepare for segue ---------------------------
-// ----------------------------------------------------------
+// ------------ Prepare for segue -----------
+// ------------------------------------------
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var DestViewController : ViewTwo = segue.destinationViewController as! ViewTwo
         
         DestViewController.songNameLabel = self.songNameVar
         DestViewController.songArtistLabel = self.songArtistVar
+        DestViewController.trackURI = self.trackURI.text!
     }
 
-// ----------------------------------------------------------
-// ----------------------------------------------------------
+// ---------------------------------------
+// ---------------------------------------
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
